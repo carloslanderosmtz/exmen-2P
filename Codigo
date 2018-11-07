@@ -1,0 +1,136 @@
+int ledAzul= 10;
+int ledVerde= 9;
+int boton = 7;
+int ledRojo= 8;
+int estado;
+int estado2;
+int estado3;
+int veces = 0;
+int boton2 = 11;
+int boton3 = 12;
+
+
+void setup (){
+pinMode(boton,INPUT_PULLUP);
+pinMode(boton2,INPUT_PULLUP);
+pinMode(boton3,INPUT_PULLUP);
+pinMode(ledRojo,OUTPUT);
+pinMode(ledVerde,OUTPUT);
+pinMode(ledAzul,OUTPUT);
+Serial.begin (9600);
+}
+void loop (){
+estado =  digitalRead (boton);
+estado2 =  digitalRead (boton2);
+estado3 =  digitalRead (boton3);
+Serial.println(veces);
+  
+if (estado==0){
+veces++;
+delay(800);
+}
+if (veces ==0){
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+digitalWrite(ledAzul,LOW);
+}
+if ( veces ==1){
+digitalWrite(ledRojo,HIGH);
+delay(800);
+digitalWrite(ledRojo,LOW);
+delay(800);
+}
+if ( veces ==2){
+digitalWrite(ledRojo,HIGH);
+digitalWrite(ledVerde,HIGH);
+delay(800);
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+delay(800);
+    
+}
+if (veces ==3) {
+digitalWrite(ledRojo,HIGH);
+digitalWrite(ledVerde,HIGH);
+digitalWrite(ledAzul,HIGH);
+delay(800);
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+digitalWrite(ledAzul,LOW);
+delay(800);}
+if(veces>3){
+veces=1;
+}
+if (estado2==0){
+veces++;
+delay(200);
+}
+if (veces ==0){
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+digitalWrite(ledAzul,LOW);
+}
+if ( veces ==1){
+digitalWrite(ledRojo,HIGH);
+delay(200);
+digitalWrite(ledRojo,LOW);
+delay(200);
+}
+if ( veces ==2){
+digitalWrite(ledRojo,HIGH);
+digitalWrite(ledVerde,HIGH);
+delay(200);
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+delay(200);
+    
+}
+if (veces ==3) {
+digitalWrite(ledRojo,HIGH);
+digitalWrite(ledVerde,HIGH);
+digitalWrite(ledAzul,HIGH);
+delay(200);
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+digitalWrite(ledAzul,LOW);
+delay(200);}
+if(veces>3){
+veces=1;
+}
+if (estado3==0){
+veces++;
+delay(1400);
+}
+if (veces ==0){
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+digitalWrite(ledAzul,LOW);
+}
+if ( veces ==1){
+digitalWrite(ledRojo,HIGH);
+delay(1400);
+digitalWrite(ledRojo,LOW);
+delay(1400);
+}
+if ( veces ==2){
+digitalWrite(ledRojo,HIGH);
+digitalWrite(ledVerde,HIGH);
+delay(1400);
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+delay(1400);
+    
+}
+if (veces ==3) {
+digitalWrite(ledRojo,HIGH);
+digitalWrite(ledVerde,HIGH);
+digitalWrite(ledAzul,HIGH);
+delay(1400);
+digitalWrite(ledRojo,LOW);
+digitalWrite(ledVerde,LOW);
+digitalWrite(ledAzul,LOW);
+delay(1400);}
+if(veces>3){
+veces=1;  
+}
+}
